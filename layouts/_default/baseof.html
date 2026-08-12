@@ -24,4 +24,10 @@
 </div>
 
 </body>
+<script>
+fetch(" https://aya-counter.aitoricore.workers.dev/visit?path=" + encodeURIComponent(window.location.pathname), {
+    method: "GET",
+    keepalive: true
+}).catch(() => {});
+</script>
 </html>

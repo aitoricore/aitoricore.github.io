@@ -3,3 +3,7 @@ locale = 'zh-cn'
 title = 'Aya Blogs - Ait 杂谈闲话'
 enableGitInfo = true
 ignoreLogs = ['warning-goldmark-raw-html']
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

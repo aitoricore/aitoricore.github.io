@@ -7,9 +7,10 @@ tags:
   - '测试页'
   - '装修中'
 showFullContent : true
+weight : 2
 ---
 
-↑头图：稻叶昙的 [予你回归线](/gugu)。
+↑头图：稻叶昙的 [予你回归线](https://www.bilibili.com/video/BV1fP4y1T7gb/)。
 
 欢迎访问 Aya 的博客站……这一页原本是个测试页，但置顶很方便我就拿它来当主页了。
 
