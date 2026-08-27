@@ -24,10 +24,27 @@
     const params = new URLSearchParams(window.location.search);
     const target = params.get("to");
 
-    // 防止空参数
-    if (target) {
-        window.location.replace(target);
-    } else {
+    // 没有目标时返回主页
+    if (!target) {
+        window.location.replace(defaultTarget);
+        return;
+    }
+
+    try {
+        const url = new URL(target, window.location.origin);
+
+        // 只允许跳转到当前站点
+        // 不然的话，可能能被某些攻击波及到
+        // 一个事关安全性的小判断捏
+        if (url.origin !== window.location.origin) {
+            window.location.replace(defaultTarget);
+            return;
+        }
+
+        window.location.replace(url.href);
+
+    } catch {
+        // 无效 URL 返回主页
         window.location.replace(defaultTarget);
     }
 
@@ -38,7 +55,7 @@
     <p>
         请点击：
         <a href="{{ "/" | relURL }}">
-            跳转
+        跳转
         </a>
     </p>
 </noscript>
