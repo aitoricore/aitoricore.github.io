@@ -1,6 +1,5 @@
 ---
 title : 'Q&A'
-
 info: |
   Question & Abandonment
 

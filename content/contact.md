@@ -1,5 +1,7 @@
 ---
 title : 'Contact'
+
+type : 'Contact'
 ---
 
 - QQ：3229377505

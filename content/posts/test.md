@@ -5,7 +5,6 @@ title : 'html 测试'
 tags:
   - '文章'
   - '过敏原提示：AI 内容'
-weight: 1
 showFullContent: true
 info: |
   如题所述。

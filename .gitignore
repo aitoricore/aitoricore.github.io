@@ -4,3 +4,4 @@ resources/
 _themes/
 .hugo_build.lock
 .DS_Store
+static/thecat_ori.png

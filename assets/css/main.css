@@ -921,3 +921,59 @@ iframe[src*="youtube.com"] {
     margin-bottom: 0.2rem;
   }
 }
+
+
+.home-main {
+    position: relative;
+}
+
+
+.home-decoration-link {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    width: clamp(135px, 18vw, 305px);
+    height: auto;
+
+    z-index: 10;
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 装饰图本体 */
+.home-decoration {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    /* 必须允许图片参与鼠标点击 */
+    pointer-events: auto;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* 侧栏/卡片 */
+.home-info.paper-card {
+    position: relative;
+    z-index: 1;
+}
+
+/* 平滑回到顶部 */
+html {
+    scroll-behavior: smooth;
+}
+

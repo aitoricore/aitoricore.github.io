@@ -40,7 +40,6 @@
             {{- end -}}
           </div>
         </div>
-
         {{ if .Params.tags }}
           <span class="post-tags">
             {{ range .Params.tags }}
@@ -55,7 +54,9 @@
 
         <div class="post-content">
           {{ if .Params.showFullContent }}
-            <blockquote class="post-excerpt">{{ .Content  }}</blockquote>
+            <blockquote class="post-excerpt" style="font-style: normal;">
+              {{ .Content  }}
+            </blockquote>
           {{ else if .Description }}
             <blockquote class="post-excerpt">{{ .Description | plainify | truncate 150 }}</blockquote>
           {{ else }}
@@ -84,8 +85,8 @@
       <div class="info-card__content">
         <p>欢迎访问 Shameimaru_Aya 的 blogs 站。</p>
         <p>现在这里正在活跃装修，请经常回来看看以发现新的变化。</p>
-        <p>使用 Terminal 主题，基于 Hugo 构建。</p>
-        <p>主要生产力来自 Github Copilot ❤。</p>
+        <p>修改自 Terminal 主题，基于 Hugo 构建。</p>
+        <p>右下角的形象：原图小倉まお（X: @mao_dowob），重绘自一位朋友。点击以返回顶端。</p>
         <hr>
         {{ $latest := index (where .Site.RegularPages "Type" "posts") 0 }}
         {{ with $latest.GitInfo }}
@@ -110,11 +111,14 @@
     <aside class="home-info paper-card" aria-label="功能模块">
       <h2 class="info-card__title">功能模块</h2>
       <hr>
+      <p>随机一言：</p>
+      <br>
       <div class="info-card__content">
         {{ partial "hitokoto.html" . }}
       </div>
     </aside>
 
+    
 
   </div>
 </div>
