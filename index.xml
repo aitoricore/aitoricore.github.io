@@ -1,145 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aya Blogs - Ait 杂谈闲话</title><link>https://aitoricore.github.io/</link><description>Recent content on Aya Blogs - Ait 杂谈闲话</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 29 Aug 2026 11:29:03 +0800</lastBuildDate><atom:link href="https://aitoricore.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>测试页</title><link>https://aitoricore.github.io/posts/hello/</link><pubDate>Wed, 05 Aug 2026 09:06:23 +0800</pubDate><guid>https://aitoricore.github.io/posts/hello/</guid><description>&lt;p&gt;↑头图：稻叶昙的 &lt;a href="https://www.bilibili.com/video/BV1fP4y1T7gb/"&gt;予你回归线&lt;/a&gt;。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aya Blogs - Ait 杂谈闲话</title><link>https://aitoricore.github.io/</link><description>Recent content on Aya Blogs - Ait 杂谈闲话</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 02 Oct 2026 11:57:30 +0800</lastBuildDate><atom:link href="https://aitoricore.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>测试页</title><link>https://aitoricore.github.io/posts/hello/</link><pubDate>Wed, 05 Aug 2026 09:06:23 +0800</pubDate><guid>https://aitoricore.github.io/posts/hello/</guid><description>&lt;p&gt;↑头图：稻叶昙的 &lt;a href="https://www.bilibili.com/video/BV1fP4y1T7gb/"&gt;予你回归线&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;欢迎访问 Aya 的博客站……这一页原本是个测试页，但置顶很方便我就拿它来当主页了。&lt;/p&gt;
 &lt;p&gt;正如标题所述，目前主要存放闲聊杂谈，以后也可能用来存放学习笔记。祝你读的开心！&lt;/p&gt;
-&lt;p&gt;感到疑惑？访问 &lt;a href="https://aitoricore.github.io/qa"&gt;Q&amp;amp;A&lt;/a&gt; 或者 &lt;a href="https://aitoricore.github.io/contact"&gt;联系我&lt;/a&gt; 直接询问吧。&lt;/p&gt;</description></item><item><title>html 测试</title><link>https://aitoricore.github.io/posts/test/</link><pubDate>Wed, 12 Aug 2026 21:23:59 +0800</pubDate><guid>https://aitoricore.github.io/posts/test/</guid><description>&lt;div class="cool-panel"&gt;
- &lt;div class="cool-panel-header"&gt;
- &lt;span class="cool-dot"&gt;&lt;/span&gt;
- &lt;span class="cool-dot"&gt;&lt;/span&gt;
- &lt;span class="cool-dot"&gt;&lt;/span&gt;
- &lt;span class="cool-title"&gt;OBSERVATION // 041&lt;/span&gt;
- &lt;/div&gt;
- &lt;div class="cool-panel-body"&gt;
- &lt;div class="cool-label"&gt;今日观测报告&lt;/div&gt;
- &lt;div class="cool-status"&gt;鸽子拒绝承认自己是鸽子。&lt;/div&gt;
- &lt;div class="cool-divider"&gt;&lt;/div&gt;
- &lt;div class="cool-text"&gt;
- &lt;p&gt;21:17，天空没有发生任何值得记录的事情。云依旧按照自己的想法缓慢移动，月亮表现得像一枚被遗忘在抽屉深处的硬币，而那只鸽子站在窗台上，以一种非常没有说服力的姿势思考宇宙。&lt;/p&gt;
- &lt;p&gt;我问它：“你在想什么？”&lt;/p&gt;
- &lt;p&gt;它没有回答。这很正常，因为鸽子通常不会回答问题。但它随后往左走了三步，停下，又往右走了一步。我因此认为它已经给出了答案。&lt;/p&gt;
- &lt;p class="cool-quote"&gt;“如果世界真的有尽头，那么鸽子大概会在尽头发现一块写着‘禁止鸽子进入’的牌子。”&lt;/p&gt;
- &lt;p&gt;于是我决定今天先不拯救世界。毕竟明天还要上课。&lt;/p&gt;
- &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="cool-panel-footer"&gt;
- &lt;span&gt;STATUS: UNEXPLAINED&lt;/span&gt;
- &lt;span&gt;///&lt;/span&gt;
- &lt;span&gt;请勿投喂鸽子&lt;/span&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;style&gt;
-.cool-panel {
- margin: 2.5rem auto;
- max-width: 720px;
- border: 1px solid rgba(255,255,255,.18);
- border-radius: 14px;
- overflow: hidden;
- background:
- linear-gradient(
- 135deg,
- rgba(255,255,255,.08),
- rgba(255,255,255,.025)
- ),
- rgba(15,15,18,.92);
- color: #eee;
- box-shadow:
- 0 18px 50px rgba(0,0,0,.25),
- inset 0 1px 0 rgba(255,255,255,.08);
- font-family:
- "SFMono-Regular",
- Consolas,
- "Liberation Mono",
- monospace;
-}
-
-.cool-panel-header {
- display: flex;
- align-items: center;
- gap: 7px;
- padding: 11px 15px;
- border-bottom: 1px solid rgba(255,255,255,.1);
- background: rgba(255,255,255,.035);
-}
-
-.cool-dot {
- width: 8px;
- height: 8px;
- border-radius: 50%;
- background: rgba(255,255,255,.3);
-}
-
-.cool-title {
- margin-left: 8px;
- font-size: .72rem;
- letter-spacing: .16em;
- opacity: .55;
-}
-
-.cool-panel-body {
- padding: 28px 30px;
-}
-
-.cool-label {
- font-size: .7rem;
- letter-spacing: .25em;
- opacity: .45;
-}
-
-.cool-status {
- margin-top: 8px;
- font-size: 1.7rem;
- line-height: 1.5;
- font-weight: 700;
- letter-spacing: .04em;
-}
-
-.cool-divider {
- height: 1px;
- margin: 25px 0 18px;
- background: linear-gradient(
- 90deg,
- rgba(255,255,255,.25),
- transparent
- );
-}
-
-.cool-text {
- font-size: .9rem;
- line-height: 1.9;
- color: rgba(255,255,255,.78);
-}
-
-.cool-text p {
- margin: 0 0 1.2em;
-}
-
-.cool-quote {
- padding-left: 16px;
- border-left: 2px solid rgba(255,255,255,.25);
- color: rgba(255,255,255,.55);
- font-style: italic;
-}
-
-.cool-panel-footer {
- display: flex;
- justify-content: space-between;
- padding: 9px 15px;
- border-top: 1px solid rgba(255,255,255,.08);
- font-size: .65rem;
- letter-spacing: .12em;
- opacity: .35;
-}
-
-@media (max-width: 600px) {
- .cool-panel-body {
- padding: 22px 20px;
- }
-
- .cool-panel-footer {
- flex-direction: column;
- gap: 5px;
- }
-}
-&lt;/style&gt;</description></item><item><title>恨憾</title><link>https://aitoricore.github.io/posts/failure/</link><pubDate>Wed, 29 Jul 2026 11:27:03 +0800</pubDate><guid>https://aitoricore.github.io/posts/failure/</guid><description>&lt;p&gt;该字段不应为空，可是，这是所有遗憾中最容易弥补的一项了。想要做些什么的手在空中停了又停。空调的冷气吹得你有点想哭。你本来是打算写点什么作为纪念的，对失败的祭奠？&lt;/p&gt;
+&lt;p&gt;感到疑惑？访问 &lt;a href="https://aitoricore.github.io/qa"&gt;Q&amp;amp;A&lt;/a&gt; 或者 &lt;a href="https://aitoricore.github.io/contact"&gt;联系我&lt;/a&gt; 直接询问吧。&lt;/p&gt;</description></item><item><title>猫猫的幸福观</title><link>https://aitoricore.github.io/posts/parfaitlover/</link><pubDate>Tue, 25 Aug 2026 23:58:59 +0800</pubDate><guid>https://aitoricore.github.io/posts/parfaitlover/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;对，是的，请把那句话再说一遍。准备好了吗？&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;宇宙由小变大又由大变小，在此之上，我没有特别想议论的事情。今天又是地球绕我们的恒星旋转一周的日子，在同一个位置可以看到相同的星座照耀于上空——我差不多也习惯于这样的感叹了。这么多东西，都是在一年内写的，不得不减少与怀念所占日常的比重也是迫不得已但情有可原。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;我没听清哦？&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;悲观地估计，最多也许还有几十个这样的合集可供我选择。其中“几”所代表的数字也许不超过四，可能是一或者二。其实，应当珍惜吧。美好的事物是怎样都不嫌太多的。几个太少，几十个也许还不够。不过可惜的是，很少能在现实中找到能一次以“几十个”计数的事物。不觉得很遗憾吗？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;是的！就是说那一句啦。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有一只猫喜欢吃抹茶芭菲。在发呆并坐在吧台边隔着玻璃观察行人的一天里，它突发奇想要了一杯。惊为天人的第一杯自然地将它引向第二杯，其深刻的影响更是残留到第三杯到来时。大快朵颐、饕餮未厌，直到第五杯猫终于吃爽了。于是猫意识到，只有第五杯芭菲能让它吃得满足。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;这是最后一次啦。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;遗憾的是，并非在所有季节里猫都有足够的芭菲可以吃。……所以它想到一个美妙的计划。下次它吃抹茶芭菲的时候，决定直接从第五杯开始吃。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;准备好了吗？3，2，1！&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;实际上，我的智慧和才干都远不如那只吃芭菲的猫。古代的贤者曾经说过：要向智慧优于你的人学习。所以我将在第一口品尝第五杯芭菲的满足，因为毕竟，抹茶芭菲之间并无区别，这是唯一可以带给我们安慰的事实。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;我喜欢你！活着真好啊。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>恨憾</title><link>https://aitoricore.github.io/posts/failure/</link><pubDate>Wed, 29 Jul 2026 11:27:03 +0800</pubDate><guid>https://aitoricore.github.io/posts/failure/</guid><description>&lt;p&gt;该字段不应为空，可是，这是所有遗憾中最容易弥补的一项了。想要做些什么的手在空中停了又停。空调的冷气吹得你有点想哭。你本来是打算写点什么作为纪念的。&lt;/p&gt;
 &lt;p&gt;哭？哭也算时间，而时间是你从来如此而此刻尤为不想放弃的事物——剩余的时间确实不多了。泪腺早已干涸，你一度怀疑自己已经无法哭泣，但最终你做到了。好了，&lt;em&gt;拍手&lt;/em&gt;，一切如你所料。正如你曾经做过的一样，剩下的事情是让情绪转化成灵感，&lt;del&gt;听从飞蛾的教导&lt;/del&gt;适当地运用理智构建画面然后文字自然地从指尖流出无需犹疑亦无可修改直到它达到你想要的形态——他妈的，线断掉了。为什么？为什么做不到？&lt;del&gt;这不是我被许诺的结果&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;声音在离开喉咙前溶解于虚空。你意识到这样的痛苦不能被转化为任何有价值的东西。在寂静中，你听见悬在你头上的沙漏滴漏时细微的声响。&lt;/p&gt;
 &lt;p&gt;自出生起沙漏就挂在你的正上方，不无提醒你人生短暂光易逝的意味。浅蓝色瓶颈处的本就不多的沙粒看上去随时都会漏尽，但你深知你不会看到它漏尽的时刻。这不是诈欺吗。&lt;/p&gt;
@@ -152,7 +36,7 @@
 &lt;p&gt;&lt;em&gt;……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;你想起被遗忘的人们的姓名。死去的人们的灵魂至今徘徊游走——其总体积已经充满了岩石圈，而其密度仍在不断上升——发出无人知晓的哀叹。深厚的沙层湮没了它们，随即着手开始湮没证明它们所存在过的痕迹。这远比前者困难得多，但是，它快要成功了吧。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;而我的名字仍在其中。&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;你想起呼吸与心跳。那是存在于此世的生物依然无法摆脱的宿命。&lt;/p&gt;
+&lt;p&gt;你想起呼吸与心跳。后面一句话被我删掉了。&lt;/p&gt;
 &lt;p&gt;你想起造物的悖论。如果存在着自然选择的意志，它用数万年的时间赋予我们知觉，如果只是为了让我们与其共有同样的贫瘠……&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;在无法逃离的悲伤和遗憾里，我是你唯一的安慰剂。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;你想起你空无一物的手心。&lt;/p&gt;

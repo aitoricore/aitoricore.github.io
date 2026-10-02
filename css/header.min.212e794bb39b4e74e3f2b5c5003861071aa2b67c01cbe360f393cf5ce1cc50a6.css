@@ -1,1 +1,0 @@
-.header{display:flex;flex-direction:column;position:relative}.header__inner{display:flex;align-items:center;justify-content:space-between}.header__logo,.header__logo::after,.header__logo a,.logo{display:none!important}@media print{.header{display:none}}
