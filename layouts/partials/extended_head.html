@@ -1,8 +1,12 @@
 <style>
   .site-nav {
-    max-width: 800px;
-    margin: 0 auto 1.4rem;
-    padding: 0.75rem 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 40px;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+    margin: 0 0 1.4rem;
+    padding: 0 0 0.75rem;
     border-bottom: 1px solid color-mix(in srgb, var(--foreground) 60%, transparent);
     font-family: "SimHei", "Heiti SC", "Microsoft YaHei", "PingFang SC", sans-serif;
   }
@@ -27,11 +31,6 @@
   .site-nav__item {
     display: inline-flex;
     align-items: center;
-  }
-
-  .site-nave__item--home{
-    /* align-items: left;
-    justify-content: flex-start; */
   }
 
   .site-nav__link {
@@ -66,20 +65,3 @@
   }
 </style>
 
-<nav class="site-nav" aria-label="站点导航">
-  <ul class="site-nav__list">
-    <li class="site-nav__item--home">
-      <a class="site-nav__link site-nav__link--home" href="{{ .Site.Home.RelPermalink }}">
-        <div class="site-logo">
-          <img src="{{ "favicon.svg" | relURL  }}" title="Aya Blogs" alt="Aya Blogs">
-        </div>
-        <!-- Aya blogs -->
-      </a>
-    </li>
-    <li class="site-nav__item"><a class="site-nav__link" href="{{ (site.GetPage "/posts").RelPermalink }}">文章</a></li>
-    <li class="site-nav__item"><a class="site-nav__link" href="{{ (site.GetPage "/tags").RelPermalink }}">标签</a></li>
-    <li class="site-nav__item"><a class="site-nav__link" href="{{ (site.GetPage "/categories").RelPermalink }}">集合</a></li>
-    <li class="site-nav__item"><a class="site-nav__link" href="{{ (site.GetPage "/log").RelPermalink }}">日志</a></li>
-    <li class="site-nav__item"><a class="site-nav__link" href="{{ (site.GetPage "/friends").RelPermalink }}">友链</a></li>
-  </ul>
-</nav>

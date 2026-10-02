@@ -1,0 +1,8 @@
+{{- $pages := site.RegularPages -}}
+[
+{{- range $index, $page := $pages -}}
+  {{- if $index }},{{ end -}}
+  {{- $summary := $page.Description | default $page.Summary | plainify -}}
+  {{- dict "title" $page.Title "url" $page.RelPermalink "summary" $summary "content" ($page.Content | plainify) "tags" $page.Params.tags | jsonify -}}
+{{- end -}}
+]

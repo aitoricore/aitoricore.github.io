@@ -30,7 +30,11 @@
     {{ if .Params.tags }}
       <span class="post-tags">
         {{ range .Params.tags }}
-        #<a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;
+        {{ $tagName := . }}
+        {{ $tagData := index $.Site.Data.tags $tagName }}
+        {{ $description := "此标签暂时没有描述" }}
+        {{ with $tagData }}{{ with .description }}{{ $description = . }}{{ end }}{{ end }}
+        #<a href="{{ (urlize (printf "tags/%s/" $tagName)) | absLangURL }}">{{ $tagName }}<span class="tag-tooltip" role="tooltip">{{ $description }}</span></a>&nbsp;
         {{ end }}
       </span>
     {{ end }}
@@ -58,24 +62,31 @@
     {{ end }}
   </article>
 
-  <aside class="info-card paper-card" aria-label="本页信息">
-    <h2 class="info-card__title">本页信息</h2>
-    <hr>
-    <div class="info-card__content">
-      {{ with .Params.info }}
-        {{ . | markdownify }}
-      {{ else }}
-        <p>暂无补充信息。</p>
-      {{ end }}
+  <div class="single-side">
+    <aside class="search-card paper-card" aria-label="站内搜索">
+      <h2 class="info-card__title">搜索页面</h2>
       <hr>
-      {{ with .GitInfo }}
-        <div class="update-info">
-          Last update: {{ .CommitDate.Format "2006-01-02 15:04:05" }}
-          <br>
-          Commit: {{ .Subject }}
-        </div>
+      {{ partial "search.html" . }}
+    </aside>
+    <aside class="info-card paper-card" aria-label="本页信息">
+      <h2 class="info-card__title">本页信息</h2>
+      <hr>
+      <div class="info-card__content">
+        {{ with .Params.info }}
+          {{ . | markdownify }}
+        {{ else }}
+          <p>暂无补充信息。</p>
         {{ end }}
-    </div>
-  </aside>
+        <hr>
+        {{ with .GitInfo }}
+          <div class="update-info">
+            Last update: {{ .CommitDate.Format "2006-01-02 15:04:05" }}
+            <br>
+            Commit: {{ .Subject }}
+          </div>
+        {{ end }}
+      </div>
+    </aside>
+  </div>
 </div>
 {{ end }}

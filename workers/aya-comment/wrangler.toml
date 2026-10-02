@@ -1,0 +1,9 @@
+name = "aya-comment"
+main = "src/index.js"
+compatibility_date = "2026-09-30"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aya-comment"
+database_id = "53a689a4-c446-4269-8db8-094d04f4d07f"
+migrations_dir = "migrations"

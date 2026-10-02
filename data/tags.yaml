@@ -1,0 +1,26 @@
+文章:
+  description: "收录所有文章相关。"
+
+杂谈:
+  description: "收录所有杂谈相关。"
+
+笔记:
+  description: "收录所有笔记相关。"
+
+年终总结:
+  description: "又到了这个时候，如今已不再为地球的公转感到震惊。"
+
+测试页:
+  description: "这个页面为测试而存在。"
+
+游记:
+  description: "收录所有游记相关。"
+
+观鸟日志:
+  description: "这是鸟？看一下。"
+
+过敏原提示：AI 内容:
+  description: "这篇内容由 ai 生成或辅助创作。"
+
+装修中:
+  description: "这篇内容正在装修。这个标签不应长期存在。"

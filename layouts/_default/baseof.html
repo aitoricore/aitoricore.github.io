@@ -23,14 +23,12 @@
   {{ end }}
 </div>
 
-</body>
 <script>
 fetch(" https://aya-counter.aitoricore.workers.dev/visit?path=" + encodeURIComponent(window.location.pathname), {
     method: "GET",
     keepalive: true
 }).catch(() => {});
 </script>
-</html>
 <a href="#" class="home-decoration-link">
 <img
         class="home-decoration"
@@ -38,3 +36,5 @@ fetch(" https://aya-counter.aitoricore.workers.dev/visit?path=" + encodeURICompo
         alt=""
     >
 </a>
+  </body>
+  </html>

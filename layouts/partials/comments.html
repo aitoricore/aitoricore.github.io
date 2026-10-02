@@ -1,8 +1,31 @@
-<!--
-To add comments section, please create `layouts/partials/comments.html` in your
-Hugo directory and insert:
 
-{{ template "_internal/disqus.html" . }}
-
-or whatever comment engine you want -> https://gohugo.io/content-management/comments/#readout
--->
+<section
+	class="comments"
+	aria-label="评论"
+	data-comment-section
+	data-api-url="https://aya-comment.aitoricore.workers.dev"
+	data-post-id="{{ .RelPermalink }}"
+	data-post-title="{{ .Title }}"
+>
+	<h2 class="info-card__title">评论本页</h2>
+	<hr>
+	<form class="comment-form" data-comment-form>
+		<label class="comment-author-label">
+			昵称（可选）
+			<input name="author" type="text" maxlength="60" autocomplete="nickname" placeholder="匿名">
+		</label>
+		<div class="comment-compose">
+			<textarea name="content" rows="3" minlength="1" maxlength="5000" required aria-label="评论内容" placeholder="在此处评论…"></textarea>
+			<button type="submit" aria-label="发送评论">✉</button>
+		</div>
+		<label class="comment-honeypot" aria-hidden="true">
+			Website
+			<input name="website" type="text" tabindex="-1" autocomplete="off">
+		</label>
+	</form>
+	<p class="comment-status" data-comment-status aria-live="polite"></p>
+	<div class="comments-list" data-comments-list>
+		<p class="comments-list__status" data-comments-list-status aria-live="polite">正在加载评论…</p>
+		<div data-approved-comments></div>
+	</div>
+</section>

@@ -73,6 +73,30 @@
   color: var(--accent);
 }
 
+.tag-tooltip {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  max-width: min(280px, calc(100vw - 20px));
+  padding: 5px 8px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background: #292929;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 35%);
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: anywhere;
+  pointer-events: none;
+}
+
+.post-tags a.is-tooltip-visible .tag-tooltip {
+  display: block;
+}
+
 .table-of-contents {
   margin: 40px 0;
 }

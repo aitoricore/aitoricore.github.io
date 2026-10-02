@@ -1,0 +1,39 @@
+{
+	"apiVersion": 1,
+	"submit": {
+		"method": "POST",
+		"path": "/api/comments",
+		"request": {
+			"postId": "/posts/example/",
+			"postTitle": "Example post",
+			"author": "Aya",
+			"content": "A comment",
+			"website": "",
+			"parentId": null
+		},
+		"response": {
+			"ok": true,
+			"message": "评论已提交，审核后显示。",
+			"comment": {
+				"id": "c0a80123-4567-4890-abcd-0123456789ab",
+				"postId": "/posts/example/",
+				"postTitle": "Example post",
+				"parentId": null,
+				"author": "Aya",
+				"content": "A comment",
+				"createdAt": "2026-09-30T12:00:00.000Z",
+				"status": "pending"
+			}
+		}
+	},
+	"list": {
+		"method": "GET",
+		"path": "/api/comments?postId=%2Fposts%2Fexample%2F&limit=20",
+		"response": {
+			"ok": true,
+			"postId": "/posts/example/",
+			"comments": [],
+			"nextCursor": null
+		}
+	}
+}
