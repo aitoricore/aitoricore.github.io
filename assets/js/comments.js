@@ -91,6 +91,16 @@ commentSections.forEach(section => {
       const result = await response.json();
       if (!response.ok || !result.ok) throw new Error(result.error || "Comment submission failed");
 
+      if (response.status === 202 && !result.comment) {
+        form.reset();
+        formStatus.textContent = "请求已接收。";
+        return;
+      }
+
+      if (response.status !== 201 || !result.comment) {
+        throw new Error("Unexpected comment response");
+      }
+
       form.reset();
       formStatus.textContent = result.message || "评论已提交，审核后显示。";
     } catch {

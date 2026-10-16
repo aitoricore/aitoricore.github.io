@@ -115,7 +115,7 @@ const listComments = async (request, env, origin) => {
   }, 200, origin);
 };
 
-const submitComment = async (request, env, origin) => {
+const submitComment = async (request, env, origin, logContext) => {
   const contentLength = Number(request.headers.get("Content-Length") || 0);
   if (contentLength > MAX_BODY_BYTES) return errorResponse("Request is too large.", 413, origin);
 
@@ -199,6 +199,15 @@ const submitComment = async (request, env, origin) => {
     comment.createdAt,
   ).run();
 
+  console.log({
+    event: "comment_submitted",
+    ...logContext,
+    commentId: comment.id,
+    postId: comment.postId,
+    status: comment.status,
+    message: comment.content,
+  });
+
   return jsonResponse({
     ok: true,
     message: "评论已提交，审核后显示。",
@@ -209,21 +218,38 @@ const submitComment = async (request, env, origin) => {
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin");
-    if (origin && !SITE_ORIGINS.has(origin)) return errorResponse("Origin is not allowed.", 403, null);
-    if (request.method === "OPTIONS") {
-      const response = jsonResponse({}, 200, origin);
-      return new Response(null, { status: 204, headers: response.headers });
-    }
-
     const url = new URL(request.url);
-    if (url.pathname !== "/api/comments") return errorResponse("Not found.", 404, origin);
+    const requestId = request.headers.get("CF-Ray") || crypto.randomUUID();
+    const logContext = { requestId, method: request.method, path: url.pathname };
+    console.log({ event: "request_started", ...logContext });
 
+    let response;
     try {
-      if (request.method === "GET") return await listComments(request, env, origin);
-      if (request.method === "POST") return await submitComment(request, env, origin);
-      return errorResponse("Method not allowed.", 405, origin);
-    } catch {
-      return errorResponse("Comment service failed.", 500, origin);
+      if (origin && !SITE_ORIGINS.has(origin)) {
+        response = errorResponse("Origin is not allowed.", 403, null);
+      } else if (request.method === "OPTIONS") {
+        const preflight = jsonResponse({}, 200, origin);
+        response = new Response(null, { status: 204, headers: preflight.headers });
+      } else if (url.pathname !== "/api/comments") {
+        response = errorResponse("Not found.", 404, origin);
+      } else if (request.method === "GET") {
+        response = await listComments(request, env, origin);
+      } else if (request.method === "POST") {
+        response = await submitComment(request, env, origin, logContext);
+      } else {
+        response = errorResponse("Method not allowed.", 405, origin);
+      }
+    } catch (error) {
+      console.error({
+        event: "request_failed",
+        ...logContext,
+        errorName: error instanceof Error ? error.name : "UnknownError",
+        errorMessage: error instanceof Error ? error.message : "Unknown error",
+      });
+      response = errorResponse("Comment service failed.", 500, origin);
     }
+
+    console.log({ event: "request_completed", ...logContext, status: response.status });
+    return response;
   },
 };

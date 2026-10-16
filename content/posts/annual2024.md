@@ -2,7 +2,7 @@
 title = "年终总结 茜の鼓動"
 date = "2024-12-29T10:55:22+08:00"
 #dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-#author = "Aya"
+author = "Aya"
 #authorTwitter = "ayaya" #do not include @
 tags = ["年终总结", "文章"]
 showFullContent = false

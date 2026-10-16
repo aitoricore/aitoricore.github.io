@@ -189,6 +189,28 @@ Invoke-RestMethod -Uri "$worker/api/comments" `
 
 正常响应为 `201`，返回 `status: "pending"`。因评论尚未审核，紧接着的 GET 不会返回它。
 
+## 查看请求日志
+
+`wrangler.toml` 已开启 Workers Logs，并将采样率设为 `1`（记录 100% 请求）。Worker 会记录 `request_started`、`request_completed`；发生异常时还会记录 `request_failed`。成功写入 D1 的评论会额外产生 `comment_submitted` 日志，其中 `message` 字段就是评论正文，并附带 comment ID、文章路径和 request ID，方便搜索与审核。
+
+注意：评论正文会因此进入 Cloudflare Workers Logs，并按 Cloudflare 日志保留策略保存。不要在评论中提交密码、联系方式等敏感资料；如不希望日志保存正文，可从 `src/index.js` 的 `comment_submitted` 日志中删除 `message` 字段。日志不记录昵称或来源 IP。
+
+如果此前已部署 Worker，需要从本目录重新部署一次，Observability 配置和新日志代码才会生效：
+
+```powershell
+npx wrangler@latest deploy
+```
+
+然后在 Cloudflare Dashboard 打开 **Workers & Pages → aya-comment → Observability → Logs**。提交一条评论后，按时间查看 `POST /api/comments` 对应的 `request_started` 和 `request_completed`，并检查状态码：
+
+- `201`：评论已写入 D1，但处于待审核状态，因此公开 GET 暂时看不到。
+- `202`：蜜罐字段被填写，Worker 为反垃圾目的返回伪成功，评论不会保存。确认表单的隐藏 `website` 字段为空。
+- `403`：来源域名不在 `SITE_ORIGINS` 允许列表中。
+- `429`：该来源 IP 达到每小时提交限制。
+- `500`：检查同一时间的 `request_failed` 事件及其 `errorMessage`，通常与 D1 绑定或 migration 有关。
+
+若看不到日志，先确认部署的 Worker 名称/账号正确、最近部署版本已生效，并且 Dashboard 中打开的是同一个 `aya-comment` Worker 的 **Observability → Logs**，而不是 D1 的 Logs 或 Analytics 页面。
+
 ## 审核评论
 
 先从 POST 响应中复制评论 `id`，然后在 Worker 目录执行：
@@ -203,6 +225,7 @@ npx wrangler@latest d1 execute aya-comment --remote --command "UPDATE comments S
 
 - **`503 Comment service is not configured`**：尚未设置 `RATE_LIMIT_SALT`，在 Worker Secrets 中添加后重新部署。
 - **`500 Comment service failed`**：检查 `wrangler.toml` 中 D1 的 `database_id`、DB binding，以及是否已成功应用 migration。
+- **审核工具报 `no such column: id`**：当前 Wrangler 连接的 `comments` 表与 Worker 预期结构不一致。运行 `npx wrangler@latest d1 execute aya-comment --remote --command "PRAGMA table_info(comments);"` 查看实际列，再运行 `npx wrangler@latest d1 migrations list aya-comment --remote` 检查 migration 状态。不要直接重跑初始 `CREATE TABLE comments` migration；应先备份并按现有列编写数据保留 migration。审核工具会在列结构不符时显示列名并停止，不会自动改表。
 - **浏览器报告 CORS 错误**：检查 `SITE_ORIGINS` 是否包含当前页面的完整来源（协议、域名和端口），修改后重新部署 Worker。
 - **POST 返回 `429`**：当前来源 IP 已达到每小时 5 条的提交上限。
 - **评论提交成功但页面没有显示**：这是预期行为；新评论先进入待审核状态，通过审核后 GET 才会返回。
