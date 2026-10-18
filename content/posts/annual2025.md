@@ -4,7 +4,7 @@ date = "2025-12-31T23:52:25+08:00"
 #dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
 #author = "Aya"
 #authorTwitter = "ayaya" #do not include @
-tags = ["年终总结", "文章"]
+tags = ["年终总结", "杂谈"]
 keywords = ["keyword1", "keyword2"]
 showFullContent = false
 readingTime = false
@@ -114,4 +114,3 @@ info = "Markdown 炸了。我在想办法修。\n\n这能换行吗？"
 >少しだけまた前を向ける
 >
 >哪怕只有少许也还能向前迈步
->

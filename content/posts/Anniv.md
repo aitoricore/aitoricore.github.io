@@ -2,7 +2,7 @@
 date = '2025-03-21T22:51:10+08:00'
 draft = false
 title = '周记 Anniv.'
-tags = ['文章']
+tags = ['杂谈']
 +++
 
 > 何回も　何回でも

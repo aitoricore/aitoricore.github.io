@@ -5,5 +5,5 @@ _themes/
 .hugo_build.lock
 .DS_Store
 static/thecat_ori.png
-workers/
 .wrangler/
+workers/aya-comment/node_modules/
